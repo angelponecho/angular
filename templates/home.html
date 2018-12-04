@@ -1,13 +1,43 @@
 <lx-tabs>
   <lx-tab heading="Post">
     <div class="p+">
-      hola mundo post
+     <div class="card" ng-repeat="post in post">
+       <div class="p+">
+         <strong class="fs-headline display block">
+          {{post.title}}
+         </strong>
+       </div>
+       <div class="praragrap fs-body-1 mt+">
+         {{post.body}}
+       </div>
+     </div>
+      <div class="card__actions">
+        <a href="#">Leer Más</a>
+      </div>
     </div>
 
   </lx-tab>
   <lx-tab heading="Users">
-    <div class="p+">
-      hola mundo users
+    <div class="card top-space" ng-repeat=" user in users">
+      <div flex-container="row">
+        <div class="card__img card__img--left" style="height:160px;">
+          <img src="img/user.jpg">
+        </div>
+        <div flex-container="column">
+          <div flex-item>
+            <strong class="fs-headline display-block">
+              {{user.name}}
+            </strong>
+            <strong class="fs-subhead tc-black2 display-block">
+              {{user.email}}
+            </strong>
+          </div>
+          <div class="card__actions">
+            <a href="#">VER USUARIO</a>
+          </div>
+        </div>
+             
+      </div>
     </div>
   </lx-tab>
 </lx-tabs>
