@@ -1,22 +1,22 @@
 <lx-tabs>
   <lx-tab heading="Post">
     <div class="p+">
-     <div class="card" ng-repeat="post in post">
-       <div class="p+">
+      <div class="card top-space" ng-repeat="post in post">
+        <div class="p+">
          <strong class="fs-headline display block">
           {{post.title}}
          </strong>
-       </div>
-       <div class="praragrap fs-body-1 mt+">
+        </div>
+        <div class="praragrap fs-body-1 mt+">
          {{post.body}}
-       </div>
-     </div>
+        </div>
+      </div>
       <div class="card__actions">
-        <a href="#">Leer Más</a>
+        <a href="#/post/{{post.id}}" class="btn btn--m btn--blue btn--flat">Leer Más</a>
       </div>
     </div>
-
   </lx-tab>
+
   <lx-tab heading="Users">
     <div class="card top-space" ng-repeat=" user in users">
       <div flex-container="row">
