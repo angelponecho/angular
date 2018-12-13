@@ -20,3 +20,11 @@ angular.module("FinalApp")
     Post=$resource('https//:jsonplaceholder.typicode.com/posts/:id',{id:@id});
     $scope.posts= Post.get({id: $routeParams.id});
   })
+  .controller("NewPostController", function ($scope,$resource) {
+    Post=$resource('https//:jsonplaceholder.typicode.com/posts/:id',{id:@id});
+    $scope.posts= {};
+    $scope.title= 'Crear post';
+    $scope.savePost =function(){
+      Post.save({data:$scope.post})
+    }
+  })
