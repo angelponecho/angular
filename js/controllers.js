@@ -18,6 +18,7 @@ angular.module("FinalApp")
     $scope.post= PostResource.get({id: $routeParams.id});
     $scope.savePost =function(){
       PostResource.save({id:$scope.post.id},{data:$scope.post}, function (data) {
+        console.log('data',data);
         $location.path("/post/"+$scope.post.id)
 
       })
