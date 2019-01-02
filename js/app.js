@@ -10,12 +10,11 @@ angular.module("FinalApp",["lumx","ngRoute", "ngResource"])
       templateUrl: "templates/post.html"
     })
     .when("/post/new",{
-      controller: "newPostController",
+      controller: "NewPostController",
       templateUrl: "templates/post_form.html"
     })
     .when("/post/edit/:id",{
       controller: "PostController",
       templateUrl: "templates/post_form.html"
   })
-
 });
