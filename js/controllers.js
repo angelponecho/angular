@@ -13,7 +13,7 @@ angular.module("FinalApp")
 
 })
 
-  .controller("PostController", function ($scope,$resource, $routeParams,$location) {
+  .controller("PostController", function ($scope,PostResource, $routeParams,$location) {
     $scope.title='editar post';
     $scope.posts= PostResource.get({id: $routeParams.id});
     $scope.savePost =function(){
