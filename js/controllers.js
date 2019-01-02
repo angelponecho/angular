@@ -14,10 +14,10 @@ angular.module("FinalApp")
   })
 
   .controller("PostController", function ($scope,PostResource,$routeParams,$location) {
-    $scope.title='editar post';
+    $scope.title='Editar post';
     $scope.post= PostResource.get({id: $routeParams.id});
     $scope.savePost =function(){
-      PostResource.save({id:$scope.post.id},{data:$scope.post}, function (data) {
+      PostResource.update({id:$scope.post.id},{data: $scope.post}, function (data) {
         console.log('data',data);
         $location.path("/post/"+$scope.post.id)
 
@@ -29,8 +29,8 @@ angular.module("FinalApp")
     $scope.title= 'Crear post';
     $scope.savePost =function(){
       PostResource.save({data:$scope.post},function (data) {
+        console.log('data',data);
         $location.path("/")
-
       })
     }
   })
