@@ -10,11 +10,13 @@
           <div class="paragraph fs-body-1 mt+">
            {{post.body}}
           </div>
-          <p class="paragraph fs-body-1 mt+" >Escrito por:
-            <strong >
-              {{post.userId}}
-            </strong>
-          </p>
+          <div ng-repeat=" user in users">
+            <p ng-if="user.id == post.userId" class="paragraph fs-body-1 mt+" >Escrito por:
+              <strong >
+                {{user.name}}
+              </strong>
+            </p>
+          </div>
         </div>
         <div class="card__actions">
           <a href="#/post/{{post.id}}" class="btn btn--m btn--blue btn--flat">Leer Más</a>
