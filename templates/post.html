@@ -6,6 +6,14 @@
     <div class="paragrap fs-body-1 mt+">
       {{post.body}}
     </div>
+    <div ng-repeat=" user in users">
+      <p ng-if="user.id == post.userId" class="paragraph fs-body-1 mt+" >
+        Escrito por:
+        <strong >
+          {{user.name}}
+        </strong>
+      </p>
+    </div>
 
   </div>
 </div>
