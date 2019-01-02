@@ -13,9 +13,9 @@ angular.module("FinalApp")
 
 })
 
-  .controller("PostController", function ($scope,PostResource, $routeParams,$location) {
+  .controller("PostController", function ($scope,PostResource,$routeParams,$location) {
     $scope.title='editar post';
-    $scope.posts= PostResource.get({id: $routeParams.id});
+    $scope.post= PostResource.get({id: $routeParams.id});
     $scope.savePost =function(){
       PostResource.save({id:$scope.post.id},{data:$scope.post}, function (data) {
         $location.path("/post"+$scope.post.id)
@@ -24,7 +24,7 @@ angular.module("FinalApp")
     }
   })
   .controller("NewPostController", function ($scope,PostResource,$location) {
-    $scope.posts= {};
+    $scope.post= {};
     $scope.title= 'Crear post';
     $scope.savePost =function(){
       PostResource.save({data:$scope.post},function (data) {
