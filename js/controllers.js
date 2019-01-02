@@ -1,14 +1,14 @@
 angular.module("FinalApp")
   .controller("MainController", function ($scope, $resource, PostResource) {
-    User=$resource('https://jsonplaceholder.typicode.com/users/:id',{id: "@id"});
+    User = $resource('https://jsonplaceholder.typicode.com/users/:id',{id: "@id"});
     $scope.posts= PostResource.query();
     $scope.users= User.query();
     $scope.removePost =function(post){
-          PostResource.delete({id: post.id},function(data){
-       })
+      PostResource.delete({id: post.id},function(data){
+      });
       $scope.posts = $scope.posts.filter(function(element){
-        return element.id!==post.id;
-      })
+        return element.id !== post.id;
+      });
     }
 
   })
@@ -18,7 +18,7 @@ angular.module("FinalApp")
     $scope.post= PostResource.get({id: $routeParams.id});
     $scope.savePost =function(){
       PostResource.save({id:$scope.post.id},{data:$scope.post}, function (data) {
-        $location.path("/post"+$scope.post.id)
+        $location.path("/post/"+$scope.post.id)
 
       })
     }
